@@ -2,7 +2,7 @@
 #define STUBS_H
 
 int add_operation(unsigned char o, float (*a) (float, float));
-float calc_res(float x, float y, char op);
+float calc_res(float x, float y, unsigned char op);
 int get_input(float* ,float* , char*);
 float suma (float,float);
 float resta (float,float);

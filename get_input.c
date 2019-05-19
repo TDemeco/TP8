@@ -9,7 +9,7 @@ enum {INIT, NUM1, NUM2, NUMDECIMAL};
 
 int get_input (float * operando1, float * operando2, unsigned char * operador)
 {
-    extern unsigned charoperators [];
+    extern unsigned char operators [];
     float * punt1 = operando1;
     float * punt2 = operando2;
     unsigned char * puntop = operador;
