@@ -17,27 +17,50 @@ int get_input (&operando1, &operando2, &operador){
         switch (state)
         {
             case INIT:
+                
                 if (c=='+')
                 {
                     state = NUM1;
-                    break;
                 }
                 else if (c=='-')
                 {
                     flagneg = 1;
                     state = NUM1;
-                    break;
                 }
                 else if (c>='0' && c<='9')
                 {
                     c -= '0';
                     *punt1 += c;
                     state = NUM2;
-                    break;
                 }
                 else
                 {
                     return ERROR;
                 }
+                break;
+                
+            case NUM1:
+                
+                if (c>='0' && c<='9')
+                {
+                    c -= '0';
+                    if (flagneg)
+                    {
+                        *punt1 -= c;
+                    }
+                    else
+                    {
+                        *punt1 += c;
+                    }
+                }
+                else
+                {
+                    return ERROR;
+                }
+                break;
+                
+            case NUM2:
+                
+                
         }
     }
