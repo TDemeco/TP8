@@ -131,6 +131,8 @@ int get_input (float * operando1, float * operando2, unsigned char * operador)
     
     int i;
     
+    c=getchar();
+    
     for (i=0; c != operators[i]; i++)                                           //Reviso si la operacion esta dentro de las operaciones realizables.
     {
         if (i > MAX_OPERATORS)                                                  //Si ya pase por todas las operaciones y no estaba la ingresada
