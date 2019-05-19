@@ -13,7 +13,7 @@ float prod (float a, float b)
     return a*b;
 }
 
-float div (float a, float b)
+float divi (float a, float b)
 {
     if ((b == 0)                                                                //Si el divisor es 0, devuelve un NaN.
     {
@@ -27,7 +27,7 @@ float div (float a, float b)
     
 }
 
-float exp (float a, float b)                                                    //El exponente sera tomado como un numero natural
+float expo (float a, float b)                                                    //El exponente sera tomado como un numero natural
 {
     if (b > 0)                                                                  //Si el exponente es mayor a 1, devuelve el resultado de la exponenciacion.
     {

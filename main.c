@@ -15,8 +15,8 @@ int main(void)
     add_operation ('+', suma);                                                  
     add_operation ('-', resta);
     add_operation ('*', prod);
-    add_operation ('/', div);
-    add_operation ('^', exp);
+    add_operation ('/', divi);
+    add_operation ('^', expo);
    
     error_code=get_input(&operando1,&operando2,&operador);                      //Almacena en su debido lugar los datos que ingrese el usuario y guarda el "codigo de error"
     
