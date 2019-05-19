@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include "get_input.h"
+#define NOERROR 0
 #define ERROR 1
-enum {INIT, NUM1, NUM2, NUMDECIMAL}
 
-float operando1, operando2;
-char operador;
+enum {INIT, NUM1, NUM2, NUMDECIMAL};
 
 int get_input (float * (&operando1), float * (&operando2), unsigned char * (&operador))
 {
@@ -255,4 +254,5 @@ int get_input (float * (&operando1), float * (&operando2), unsigned char * (&ope
     {
         *punt2 += decimal;                                                      //De no ser asi, el operando era positivo, por lo que se los debo sumar.
     }
+    return NOERROR;
 }
