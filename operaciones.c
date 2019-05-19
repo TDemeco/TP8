@@ -15,7 +15,7 @@ float prod (float a, float b)
 
 float divi (float a, float b)
 {
-    if ((b == 0)                                                                //Si el divisor es 0, devuelve un NaN.
+    if (b == 0)                                                                //Si el divisor es 0, devuelve un NaN.
     {
         return (0/0);
     }

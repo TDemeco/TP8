@@ -2,15 +2,17 @@
 #include "get_input.h"
 #define NOERROR 0
 #define ERROR 1
+#define MAX_OPERATORS 5
+
 
 enum {INIT, NUM1, NUM2, NUMDECIMAL};
 
-int get_input (float * (&operando1), float * (&operando2), unsigned char * (&operador))
+int get_input (float * operando1, float * operando2, unsigned char * operador)
 {
-    
-    float * punt1 = &operando1;
-    float * punt2 = &operando2;
-    unsigned char * puntop = &operador;
+    extern unsigned charoperators [];
+    float * punt1 = operando1;
+    float * punt2 = operando2;
+    unsigned char * puntop = operador;
     float decimal = 0;
     int cantdecimales = 0;
     char c, flagneg = 0;
@@ -127,9 +129,11 @@ int get_input (float * (&operando1), float * (&operando2), unsigned char * (&ope
         *punt1 += decimal;                                                      //De no ser asi, el operando era positivo, por lo que se los debo sumar.
     }
     
-    for (i=0; c != operadoresascii[i]; i++)                                     //Reviso si la operacion esta dentro de las operaciones realizables.
+    int i;
+    
+    for (i=0; c != operators[i]; i++)                                           //Reviso si la operacion esta dentro de las operaciones realizables.
     {
-        if (i>MAX_OPERADORES)                                                   //Si ya pase por todas las operaciones y no estaba la ingresada
+        if (i > MAX_OPERATORS)                                                  //Si ya pase por todas las operaciones y no estaba la ingresada
         {
             return ERROR;                                                       //Tiro error, ya que no puedo realizar esa operacion (o no es valida).
         }
