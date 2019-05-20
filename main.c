@@ -19,15 +19,14 @@ int main(void)
     add_operation ('/', divi);
     add_operation ('^', expo);
    
-    error_code = get_input(&operando1,&operando2,&operador);                      //Almacena en su debido lugar los datos que ingrese el usuario y guarda el "codigo de error"
+    error_code = get_input(&operando1,&operando2,&operador);                    //Almacena en su debido lugar los datos que ingrese el usuario y guarda el "codigo de error"
     
     if (check_errors(error_code)!= 0)
     {                                                                           //Verifica la salida de get input,verificando si hubo o no errores.
        return 0;
     }                                                   
     
-    
-    printf("\n= %f\n", calc_res(operando1,operando2,operador));                 //Imprime en pantalla el resultado de la operacion a realizar.
+    printf("\n= %.10f\n", calc_res(operando1,operando2,operador));              //Imprime en pantalla el resultado de la operacion a realizar.
     return 0;
 }
 
