@@ -4,13 +4,13 @@
 
 enum {INIT, NUM1, NUM2, NUMDECIMAL};                                            //Ennumero los estados a utilizar en la funcion.
 
-int get_input (float * operando1, float * operando2, unsigned char * operador)  //get_input es una funcion que recibe por teclado dos operandos y un operador, y los escribe en sus variables correspondientes.
+int get_input (double * operando1, double * operando2, unsigned char * operador)  //get_input es una funcion que recibe por teclado dos operandos y un operador, y los escribe en sus variables correspondientes.
 {
     extern unsigned char operators [];                                          //Le aclaro a la funcion que el arreglo de operadores a utilizar esta en otro archivo
-    float * punt1 = operando1;                                                  //Defino un puntero al primer operando
-    float * punt2 = operando2;                                                  //Defino un puntero al segundo operando
+    double * punt1 = operando1;                                                  //Defino un puntero al primer operando
+    double * punt2 = operando2;                                                  //Defino un puntero al segundo operando
     unsigned char * puntop = operador;                                          //Defino un puntero al operador, o funcion a realizar
-    float decimal = 0;                                                          //Inicio una variable que contendra, si hubiese, el numero decimal a sumar
+    double decimal = 0;                                                          //Inicio una variable que contendra, si hubiese, el numero decimal a sumar
     int cantdecimales = 0;                                                      //Ademas, defino otra variable que tendra la cantidad de decimales que contiene el numero anterior
     char c, flagneg = 0;                                                        //Inicio una variable c que utilizare para recuperar los caracteres de getchar, y un flag para saber si el numero con el que trabajo es negativo.
     char state = INIT;                                                          //Por ultimo, inicializo la variable de estado de la FSM en su estado inicial.

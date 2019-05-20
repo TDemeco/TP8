@@ -3,7 +3,7 @@
 
 #define NAN (0.0/0.0)
 
-float calc_res(float operando1, float operando2, unsigned char operador)
+double calc_res(double operando1, double operando2, unsigned char operador)
 {
     if(operador == '+')                                                         //Calcula la suma.
     {
@@ -31,22 +31,22 @@ float calc_res(float operando1, float operando2, unsigned char operador)
     }
 }
 
-float suma (float a, float b)                                                   //Funcion que realiza la suma de dos operandos de tipo float.
+double suma (double a, double b)                                                   //Funcion que realiza la suma de dos operandos de tipo double.
 {
     return a+b;                                                                 //Devuelve el resultado de la suma.
 }
 
-float resta (float a, float b)                                                  //Funcion que realiza la resta de dos operandos de tipo float, en el orden en el que son pasados.
+double resta (double a, double b)                                                  //Funcion que realiza la resta de dos operandos de tipo double, en el orden en el que son pasados.
 {
     return a-b;                                                                 //Devuelve el resultado de la resa.
 }
 
-float prod (float a, float b)                                                   //Funcion que realiza el producto de dos operandos de tipo float.
+double prod (double a, double b)                                                   //Funcion que realiza el producto de dos operandos de tipo double.
 {
     return a*b;                                                                 //Devuelve el resultado de la multiplicacion.
 }
 
-float divi (float a, float b)                                                   //Funcion que realiza la division de dos operandos de tipo float, siendo el primero el dividendo y el segundo el divisor.
+double divi (double a, double b)                                                   //Funcion que realiza la division de dos operandos de tipo double, siendo el primero el dividendo y el segundo el divisor.
 {
     if (b == 0)                                                                 //Si el divisor es 0,
     {
@@ -60,10 +60,10 @@ float divi (float a, float b)                                                   
     
 }
 
-float expo (float a, float b)                                                   //Funcion que recibe dos operandos y eleva el primero a la potencia del segundo.
+double expo (double a, double b)                                                   //Funcion que recibe dos operandos y eleva el primero a la potencia del segundo.
 {
     (int) b;                                                                    //Primero, tomara el segundo operando como un numero entero. (Por lo tanto, si recibe un numero decimal lo truncará)
-    float temp;                                                                 //Defino una variable temporal de tipo float donde ire guardando los resultados parciales.
+    double temp;                                                                 //Defino una variable temporal de tipo double donde ire guardando los resultados parciales.
     
     if (b > 0)                                                                  //Si el exponente es positivo.
     {

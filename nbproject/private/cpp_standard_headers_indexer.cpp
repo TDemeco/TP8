@@ -53,7 +53,7 @@
 #include <new> 	            // Low-level memory management utilities
 #include <memory> 	    // Higher level memory management utilities
 #include <climits>          // limits of integral types
-#include <cfloat> 	    // limits of float types
+#include <cdouble> 	    // limits of double types
 #include <limits> 	    // standardized way to query properties of arithmetic types
 #include <exception> 	    // Exception handling utilities
 #include <stdexcept> 	    // Standard exception objects
@@ -108,7 +108,7 @@
 #include <unordered_map>    // (since C++11) 	std::unordered_map and std::unordered_multimap unordered associative containers
 #include <random>           // (since C++11) 	Random number generators and distributions
 #include <ratio>            // (since C++11) 	Compile-time rational arithmetic
-#include <cfenv>            // (since C++11) 	Floating-point environment access functions
+#include <cfenv>            // (since C++11) 	doubleing-point environment access functions
 #include <codecvt>          // (since C++11) 	Unicode conversion facilities
 #include <regex>            // (since C++11) 	Classes, algorithms and iterators to support regular expression processing
 #include <atomic>           // (since C++11) 	Atomic operations library

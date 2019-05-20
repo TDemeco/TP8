@@ -4,16 +4,16 @@
 #include "operaciones.h"
 #include "get_input.h"
 
-static int add_operation(unsigned char o, float (*a) (float, float));           //Prototipos de funciones a utilizar en el main
+static int add_operation(unsigned char o, double (*a) (double, double));           //Prototipos de funciones a utilizar en el main
 static int check_errors(int);                                                   //Son consideradas static porque solo son usadas dentro de este archivo, y no deben ser publicas.
 
 unsigned char operators[MAX_OPERATORS];                                         //Arreglo de operadores
-float (* actions [MAX_OPERATORS] ) (float, float);                              //Arreglo con las direcciones de las funciones de cada operando
+double (* actions [MAX_OPERATORS] ) (double, double);                              //Arreglo con las direcciones de las funciones de cada operando
 
 int main(void) 
 {
     int error_code = 0;                                                             //Variable utilizada para validar entrada de datos
-    float operando1, operando2;                                                 //Variables usadas para almacenar los operandos
+    double operando1, operando2;                                                 //Variables usadas para almacenar los operandos
     unsigned char operador;                                                     //Variables usadas para almacenar el operador
                                                                                 /*Agrega a los 2 arreglos las operaciones; por un lado guarda el simbolo de la 
                                                                                 operacion y por otro guarda la direccion de la que se encuentra dicha funcion.*/
@@ -40,7 +40,7 @@ int main(void)
     return NOERROR;
 }
 
-static int add_operation(unsigned char o, float (*a) (float, float))
+static int add_operation(unsigned char o, double (*a) (double, double))
 {   
     static int numops = 0;                                                      //Define una variable para el numero de operaciones en los arreglos.
 

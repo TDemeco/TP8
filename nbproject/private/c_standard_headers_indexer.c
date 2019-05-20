@@ -43,7 +43,7 @@
 #include <assert.h> 	 // Conditionally compiled macro that compares its argument to zero
 #include <ctype.h> 	 // Functions to determine the type contained in character data
 #include <errno.h> 	 // Macros reporting error conditions
-#include <float.h> 	 // Limits of float types
+#include <double.h> 	 // Limits of double types
 #include <limits.h> 	 // Sizes of basic types
 #include <locale.h> 	 // Localization utilities
 #include <math.h> 	 // Common mathematics functions
@@ -60,7 +60,7 @@
 #include <wctype.h>      // (since C95) Wide character classification and mapping utilities
 #ifdef _STDC_C99
 #include <complex.h>     // (since C99) Complex number arithmetic
-#include <fenv.h>        // (since C99) Floating-point environment
+#include <fenv.h>        // (since C99) doubleing-point environment
 #include <inttypes.h>    // (since C99) Format conversion of integer types
 #include <stdbool.h>     // (since C99) Boolean type
 #include <stdint.h>      // (since C99) Fixed-width integer types
