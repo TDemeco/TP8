@@ -112,6 +112,11 @@ int get_input (float * operando1, float * operando2, unsigned char * operador)  
         }
     }
     
+    if (state == INIT && c == ' ')                                              //Si lo primero que agarra es un espacio manda error.
+    {
+        return ERROR;                                                           
+    }
+    
     for ( ; cantdecimales != 0; cantdecimales--)                                //Si tengo numeros decimales, me dirijo a sumarselos al operando 1.
     {
         decimal /= 10;                                                          //Divido por 10 la variable decimal, tantas veces como decimales fueron ingresados.
