@@ -67,17 +67,17 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tp8_1: ${OBJECTFILES}
 ${OBJECTDIR}/get_input.o: get_input.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -std=c99 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/get_input.o get_input.c
+	$(COMPILE.c) -g -Wall -std=c99 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/get_input.o get_input.c
 
 ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -std=c99 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
+	$(COMPILE.c) -g -Wall -std=c99 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
 
 ${OBJECTDIR}/operaciones.o: operaciones.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -std=c99 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/operaciones.o operaciones.c
+	$(COMPILE.c) -g -Wall -std=c99 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/operaciones.o operaciones.c
 
 # Subprojects
 .build-subprojects:

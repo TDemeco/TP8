@@ -143,7 +143,7 @@ int get_input (double * operando1, double * operando2, unsigned char * operador)
     
     *puntop = c;                                                                //Si la operacion es valida, la guardo en el operador para luego realizarla.
     
-    if (c=getchar() != ' ')                                                     //Si luego de la operacion, no se ingreso un espacio
+    if ((c=getchar()) != (' '))                                                     //Si luego de la operacion, no se ingreso un espacio
     {
         return ERROR;                                                           //Se debe indicar error, ya que se ingreso algo invalido (Por ejemplo, "*+", o "+-", etc).
     }

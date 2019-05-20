@@ -73,6 +73,7 @@ static int check_errors (int error_code)                                        
             return ERROR;
         default:
             printf("Error al añadir la operacion, revise las operaciones agregadas.");
+            return ERROR;
     }
 }
 
