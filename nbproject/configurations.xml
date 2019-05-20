@@ -6,7 +6,7 @@
                    projectFiles="true">
       <itemPath>get_input.h</itemPath>
       <itemPath>main.h</itemPath>
-      <itemPath>stubs.h</itemPath>
+      <itemPath>operaciones.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -54,7 +54,7 @@
       </item>
       <item path="operaciones.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="stubs.h" ex="false" tool="3" flavor2="0">
+      <item path="operaciones.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -88,7 +88,7 @@
       </item>
       <item path="operaciones.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="stubs.h" ex="false" tool="3" flavor2="0">
+      <item path="operaciones.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

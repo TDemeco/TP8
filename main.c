@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-#include "stubs.h"
+#include "operaciones.h"
+#include "get_input.h"
+
+int add_operation(unsigned char o, float (*a) (float, float));                  //Prototipos de funciones a utilizar en el main
+float calc_res(float x, float y, unsigned char op);
+int check_errors(int);
 
 unsigned char operators[MAX_OPERATORS];                                         //Arreglo de operadores
 float (* actions [MAX_OPERATORS] ) (float, float);                              //Arreglo con las direcciones de las funciones de cada operando

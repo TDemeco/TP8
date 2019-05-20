@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "operaciones.h"
 
 #define NAN (0.0/0.0)
 
