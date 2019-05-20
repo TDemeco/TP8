@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include "get_input.h"
-#define NOERROR 0                                                               //Defino una constante de no error
-#define ERROR 1                                                                 //Y una de error
-#define MAX_OPERATORS 5                                                         //Ademas de definir cual sera el numero de operaciones maximas
-
+#include "main.h"
 
 enum {INIT, NUM1, NUM2, NUMDECIMAL};                                            //Ennumero los estados a utilizar en la funcion.
 

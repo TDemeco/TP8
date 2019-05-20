@@ -1,3 +1,7 @@
+#include <stdio.h>
+
+#define NAN (0.0/0.0)
+
 float suma (float a, float b)                                                   //Funcion que realiza la suma de dos operandos de tipo float.
 {
     return a+b;                                                                 //Devuelve el resultado de la suma.
@@ -17,7 +21,7 @@ float divi (float a, float b)                                                   
 {
     if (b == 0)                                                                 //Si el divisor es 0,
     {
-        return (0/0);                                                           //La funcion dara error de punto flotante.
+        return NAN;                                                           //La funcion dara error de punto flotante.
     }
     
     else
