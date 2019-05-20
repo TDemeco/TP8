@@ -3,6 +3,34 @@
 
 #define NAN (0.0/0.0)
 
+float calc_res(float operando1, float operando2, unsigned char operador)
+{
+    if(operador == '+')                                                         //Calcula la suma.
+    {
+        return suma(operando1,operando2);
+    }
+    
+    else if(operador == '-')
+    {
+        return resta(operando1,operando2);                                      //Calcula la resta.
+    }
+    
+    else if(operador == '*')                                                    //Calcula multiplicación.
+    {
+        return prod(operando1,operando2);
+    }
+    
+    else if(operador == '/')                                                    //Calcula división.
+    {
+        return divi(operando1,operando2);
+    }
+    
+    else if(operador == '^')                                                    //Calcula exponente.
+    {
+        return expo(operando1,operando2);
+    }
+}
+
 float suma (float a, float b)                                                   //Funcion que realiza la suma de dos operandos de tipo float.
 {
     return a+b;                                                                 //Devuelve el resultado de la suma.

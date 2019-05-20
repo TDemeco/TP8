@@ -4,38 +4,43 @@
 #include "operaciones.h"
 #include "get_input.h"
 
-int add_operation(unsigned char o, float (*a) (float, float));                  //Prototipos de funciones a utilizar en el main
-float calc_res(float x, float y, unsigned char op);
-int check_errors(int);
+static int add_operation(unsigned char o, float (*a) (float, float));           //Prototipos de funciones a utilizar en el main
+static int check_errors(int);                                                   //Son consideradas static porque solo son usadas dentro de este archivo, y no deben ser publicas.
 
 unsigned char operators[MAX_OPERATORS];                                         //Arreglo de operadores
 float (* actions [MAX_OPERATORS] ) (float, float);                              //Arreglo con las direcciones de las funciones de cada operando
 
 int main(void) 
 {
-    int error_code;                                                             //Variable utilizada para validar entrada de datos
+    int error_code = 0;                                                             //Variable utilizada para validar entrada de datos
     float operando1, operando2;                                                 //Variables usadas para almacenar los operandos
     unsigned char operador;                                                     //Variables usadas para almacenar el operador
                                                                                 /*Agrega a los 2 arreglos las operaciones; por un lado guarda el simbolo de la 
                                                                                 operacion y por otro guarda la direccion de la que se encuentra dicha funcion.*/
-    add_operation ('+', suma);                                                  
-    add_operation ('-', resta);
-    add_operation ('*', prod);
-    add_operation ('/', divi);
-    add_operation ('^', expo);
+    error_code += add_operation ('+', suma);
+    error_code += add_operation ('-', resta);
+    error_code += add_operation ('*', prod);
+    error_code += add_operation ('/', divi);
+    error_code += add_operation ('^', expo);
+    
+    if (check_errors(error_code)!= NOERROR)
+    {                                                                           //Verifica la salida de get input,verificando si hubo o no errores.
+       return ERROR;
+    }                                                   
+    
    
     error_code = get_input(&operando1,&operando2,&operador);                    //Almacena en su debido lugar los datos que ingrese el usuario y guarda el "codigo de error"
     
-    if (check_errors(error_code)!= 0)
+    if (check_errors(error_code)!= NOERROR)
     {                                                                           //Verifica la salida de get input,verificando si hubo o no errores.
-       return 0;
+       return ERROR;
     }                                                   
     
     printf("\n= %.10f\n", calc_res(operando1,operando2,operador));              //Imprime en pantalla el resultado de la operacion a realizar.
-    return 0;
+    return NOERROR;
 }
 
-int add_operation(unsigned char o, float (*a) (float, float))
+static int add_operation(unsigned char o, float (*a) (float, float))
 {   
     static int numops = 0;                                                      //Define una variable para el numero de operaciones en los arreglos.
 
@@ -57,44 +62,18 @@ int add_operation(unsigned char o, float (*a) (float, float))
 }
 
 
-int check_errors (int error_code)
-{
+static int check_errors (int error_code)                                        //La funcion verifica si hubo error en la entrada de datos.
+{                                                                               //De ser asi, notifica tanto al usuario como al programa.
     switch (error_code)
     {
-        case 0: 
-            return 0; break;
-        case 1:
+        case NOERROR: 
+            return NOERROR;
+        case ERROR:
             printf("Error, dato invalido");
-            return 1; break;     
+            return ERROR;
+        default:
+            printf("Error al añadir la operacion, revise las operaciones agregadas.");
     }
 }
 
-
-float calc_res(float operando1, float operando2, unsigned char operador)
-{
-    if(operador == '+')                                                         //Calcula la suma.
-    {
-        return suma(operando1,operando2);
-    }
-    
-    else if(operador == '-')
-    {
-        return resta(operando1,operando2);                                      //Calcula la resta.
-    }
-    
-    else if(operador == '*')                                                    //Calcula multiplicación.
-    {
-        return prod(operando1,operando2);
-    }
-    
-    else if(operador == '/')                                                    //Calcula división.
-    {
-        return divi(operando1,operando2);
-    }
-    
-    else if(operador == '^')                                                    //Calcula exponente.
-    {
-        return expo(operando1,operando2);
-    }
-}
 
