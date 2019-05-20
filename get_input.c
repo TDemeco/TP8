@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include "get_input.h"
-#define NOERROR 0
-#define ERROR 1
-#define MAX_OPERATORS 5
+#include "main.h"
 
 
 enum {INIT, NUM1, NUM2, NUMDECIMAL};

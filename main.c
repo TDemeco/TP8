@@ -8,27 +8,30 @@ float (* actions [MAX_OPERATORS] ) (float, float);                              
 
 int main(void) 
 {
-    int error_code;                                                             //Variable utilizada para validar entrada de datos
-    float operando1, operando2;                                                 //Variables usadas para almacenar los operandos
-    unsigned char operador;                                                     //Variables usadas para almacenar el operador
+    int loop = 1;
+    
+    while (loop)
+    {
+        int error_code;                                                             //Variable utilizada para validar entrada de datos
+        float operando1, operando2;                                                 //Variables usadas para almacenar los operandos
+        unsigned char operador;                                                     //Variables usadas para almacenar el operador
                                                                                 /*Agrega a los 2 arreglos las operaciones; por un lado guarda el simbolo de la 
                                                                                 operacion y por otro guarda la direccion de la que se encuentra dicha funcion.*/
-    add_operation ('+', suma);                                                  
-    add_operation ('-', resta);
-    add_operation ('*', prod);
-    add_operation ('/', divi);
-    add_operation ('^', expo);
+        add_operation ('+', suma);                                                  
+        add_operation ('-', resta);
+        add_operation ('*', prod);
+        add_operation ('/', divi);
+        add_operation ('^', expo);
    
-    error_code = get_input(&operando1,&operando2,&operador);                      //Almacena en su debido lugar los datos que ingrese el usuario y guarda el "codigo de error"
+        error_code = get_input(&operando1,&operando2,&operador);                //Almacena en su debido lugar los datos que ingrese el usuario y guarda el "codigo de error"
     
-    if (check_errors(error_code)!= 0)
-    {                                                                           //Verifica la salida de get input,verificando si hubo o no errores.
-       return 0;
-    }                                                   
+        if (check_errors(error_code)!= 0)
+        {                                                                       //Verifica la salida de get input,verificando si hubo o no errores.
+            loop = 0;
+        }                                                   
     
-    
-    printf("\n= %f\n", calc_res(operando1,operando2,operador));                 //Imprime en pantalla el resultado de la operacion a realizar.
-    return 0;
+        printf("\n%f\n", calc_res(operando1,operando2,operador));               //Imprime en pantalla el resultado de la operacion a realizar.
+    }
 }
 
 int add_operation(unsigned char o, float (*a) (float, float))
